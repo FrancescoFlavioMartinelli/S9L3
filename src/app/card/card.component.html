@@ -1,0 +1,10 @@
+<div *ngIf="visible" class="card" style="width: 18rem;" [ngStyle]="{'color': textColor}">
+  <div class="card-body bg-info">
+    <h5 class="card-title">{{post.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{post.id}}</h6>
+    <p class="card-text">{{post.body}}
+    </p>
+  </div>
+  <!-- <button class="btn btn-success" (click)="cambiaColor()">Cambia colore</button> -->
+  <button class="btn btn-success" (click)="mostraDettagli()">Dettagli</button>
+</div>

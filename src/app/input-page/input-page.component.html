@@ -1,0 +1,21 @@
+<!-- <div class="card" style="width: 18rem;" *ngFor="let p of posts">
+  <div class="card-body">
+    <h5 class="card-title">{{p.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{p.id}}</h6>
+    <p class="card-text">{{p.body}}
+    </p>
+  </div>
+</div> -->
+
+<app-card *ngFor="let p of posts; index as i" [post]="p" [visible]="p.active" ></app-card>
+<app-card *ngFor="let p of posts" [post]="p" [visible]="!p.active"></app-card>
+
+<!-- <app-card [post]="posts[0]"></app-card>
+<app-card [post]="posts[1]"></app-card>
+<app-card [post]="posts[2]"></app-card>
+<app-card [post]="posts[3]"></app-card> -->
+
+<app-card [post]="{id:5, title:'prova', body:'asdASDSA', active:true}"></app-card>
+
+<button class="btn btn-danger" (click)="cambiaPost()">Cambia post</button>
+

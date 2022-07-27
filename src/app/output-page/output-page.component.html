@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="cards">
+    <!-- <app-card *ngFor="let p of posts" [post]="p"></app-card> -->
+    <!-- <div *ngFor="let p of posts" class="card" style="width: 18rem;">
+            <div class="card-body bg-info">
+              <h5 class="card-title">{{p.title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{p.id}}</h6>
+              <p class="card-text">{{p.body}}
+              </p>
+            </div>
+            <button class="btn btn-success" (click)="dettagli(p)">Dettagli</button>
+          </div> -->
+
+
+          <!-- INPUT -->
+          <!-- OUTPUT - uso EventBinding per osservare l'evento dell'eventEmitter del child e gli associo l'esecuzione desiderata dal mio parent.
+        $event è il parametro inviato da .emit() nel child -->
+          <!-- <app-card (dettagliEventEmitter)="dettagli($event)" ></app-card> -->
+          
+
+          <!-- INPUT + OUTPUT -->
+          <app-card *ngFor="let p of posts" [post]="p" (dettagliEventEmitter)="dettagli($event)" ></app-card>
+  </div>
+
+  <div class="dettagli">
+    <h1>Dettagli</h1>
+    id: {{postDettagli.id}}<br>
+    Title: {{postDettagli.title}}<br>
+    Body: {{postDettagli.body}}<br>
+    <button *ngIf="postDettagli.active; else disattivaBtn">attiva</button>
+    <ng-template #disattivaBtn>
+      <button>disattiva</button>
+    </ng-template>
+  </div>
+</div>

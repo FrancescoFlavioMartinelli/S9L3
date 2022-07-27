@@ -1,0 +1,26 @@
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+
+    <!-- NGCONTENT SINGOLO - scommentare ogni riga -->
+    <!-- <li class="list-group-item"> -->
+    <!-- UN CONTENUTO PERSONALIZZATO PER OGNI COMPONENT DI QUESTA CLASSE -->
+
+    <!-- <span>Dato: <b>123</b></span> -->
+    <!-- <h1>titolo riga</h1> -->
+
+    <!-- Questo tag prenderà come valore l'html interno al tag del child (nel component parent) -->
+    <!-- <ng-content></ng-content> -->
+
+    <!-- </li> -->
+
+    <!-- Possiamo avere più ng-content aggiungendo l'attributo select -->
+    <li class="list-group-item">
+      <ng-content select="[primaRiga]"></ng-content>
+    </li>
+
+    <li class="list-group-item">
+      <ng-content select="[secondaRiga]"></ng-content>
+    </li>
+
+  </ul>
+</div>

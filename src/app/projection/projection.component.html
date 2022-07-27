@@ -1,0 +1,30 @@
+<!-- Content Projection -->
+<!-- Abbiamo più children con un contenuto html interno diverso -->
+<!-- Per creare template grafici di componenti (senza logica diversa pèer ogni istanza) -->
+<!-- Lavorando ancora nel parent abbiamo accesso a prop e metodi della classe -->
+<!-- <app-projected-child>
+    <h1>{{title}}</h1>
+    <button (click)="cambia()">cambia</button>
+</app-projected-child>
+
+<app-projected-child>
+    <span>Dato: <b>123</b></span>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ea voluptate earum repellendus vero officiis nobis dolore velit maiores, soluta doloremque, assumenda delectus architecto at aut exercitationem, aspernatur veniam consequatur!</p>
+</app-projected-child> -->
+
+<!-- 2 ng-content -->
+<!-- <app-projected-child>
+
+    <h1 primaRiga>{{title}}</h1>
+    
+    <button (click)="cambia()" secondaRiga>cambia</button>
+
+</app-projected-child> -->
+
+<app-projected-child *ngFor="let t of titles; index as i">
+    <h1 primaRiga>{{t}}</h1>
+
+    <!-- Questoo pulsante non fa nulla al livello di projected-child -->
+    <button (click)="cambia(i)" secondaRiga>CAMBIA</button>
+
+</app-projected-child>

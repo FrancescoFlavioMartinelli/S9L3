@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vw;
+}
+
+.cards, .dettagli {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+}
